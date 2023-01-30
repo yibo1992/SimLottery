@@ -13,8 +13,6 @@ import random
 '''初始球组'''
 redballs = list(range(1,34))
 blueballs = list(range(1,17))
-chosen_reds = []
-chosen_blues = []
 
 def pick_balls(balls,num_chosen=6):
     '''抽出一个球'''
@@ -29,14 +27,8 @@ def pick_balls(balls,num_chosen=6):
         num_chosen+=-1
     print(chosens)
     return(chosens)
-
-    
+ 
 '''实际抽球，运行一次抽一个，时间间隔自己把控，模拟真随机'''    
 pick_balls(redballs)
 
-
-
-
-
-
-
+pick_balls(blueballs,num_chosen=1)
