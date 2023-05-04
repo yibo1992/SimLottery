@@ -5,13 +5,15 @@ Created on Sun Jan 29 16:22:25 2023
 中国福利彩票双色球模拟选球
 主要逻辑，运行一次，选出一个号，不放回，模拟现场抽球
 
+会检查选出的号码是否曾经中过四等奖及以上
+
 @author: roger
 """
 import pandas as pd
 import random
 
-from check_result import check_lottery
-from histdata import update_ssq
+from bll.check_result import check_lottery
+from dal.histdata import update_ssq
 
 
 '''更新数据库'''
