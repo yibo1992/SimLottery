@@ -7,8 +7,16 @@ Created on Sun Jan 29 16:22:25 2023
 
 @author: roger
 """
-
+import pandas as pd
 import random
+
+from check_result import check_lottery
+from histdata import update_ssq
+
+
+'''更新数据库'''
+update_ssq(latest_count = 10)
+
 
 '''初始球组'''
 redballs = list(range(1,34))
@@ -29,6 +37,17 @@ def pick_balls(balls,num_chosen=6):
     return(chosens)
  
 '''实际抽球，运行一次抽一个，时间间隔自己把控，模拟真随机'''    
-pick_balls(redballs)
+reds = pick_balls(redballs)
 
-pick_balls(blueballs,num_chosen=1)
+blues = pick_balls(blueballs,num_chosen=1)
+
+selected = [reds,blues]
+
+
+df =pd.read_csv('ssq2013.csv',
+                encoding='ISO-8859-1',
+                )
+df.columns=['rq','r1','r2','r3','r4','r5','r6','b',]
+# print(df)
+
+check_lottery(selected,df)
