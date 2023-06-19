@@ -51,5 +51,6 @@ df =pd.read_csv('ssq2013.csv',
                 )
 df.columns=['rq','r1','r2','r3','r4','r5','r6','b',]
 # print(df)
-
+print(sorted(reds))
+print(blues)
 check_lottery(selected,df)

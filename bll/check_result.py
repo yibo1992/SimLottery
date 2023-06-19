@@ -44,12 +44,13 @@ def check_lottery(selected,df):
         blues = df.iloc[i][['b',]].values
         comparelist = [reds,blues]
         re =  judge_the_reward_level(selected, comparelist)
-        if re<=4:
+        if re<=3:
             print(df.iloc[i][['rq',]].values)
             print(re)
             break
-    if re >4:
+    if re >3:
         print('该号码未曾中过大奖')
+        
         
         
         
